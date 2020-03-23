@@ -180,23 +180,23 @@ ondescribe = function(configuration) {
                             displayName: "Email",
                             type: "string"
                         },
-                        "address.street": {
+                        "addressStreet": {
                             displayName: "Address.Street",
                             type: "string"
                         },
-                        "address.suite": {
+                        "addressSuite": {
                             displayName: "Address.Suite",
                             type: "string"
                         },
-                        "address.city": {
+                        "addressCity": {
                             displayName: "Address.City",
                             type: "string"
                         },
-                        "address.geo.lat": {
+                        "addressGeoLat": {
                             displayName: "Address.Geo.Latitude",
                             type: "string"
                         },
-                        "address.geo.lng": {
+                        "addressGeoLng": {
                             displayName: "Address.Get.Longitude",
                             type: "string"
                         },
@@ -208,15 +208,15 @@ ondescribe = function(configuration) {
                             displayName: "Website",
                             type: "string"
                         },
-                        "company.name": {
+                        "companyName": {
                             displayName: "Company.Name",
                             type: "string"
                         },
-                        "company.catchPhrase": {
+                        "companyCatchPhrase": {
                             displayName: "Company.CatchPhrase",
                             type: "string"
                         },
-                        "company.bs": {
+                        "companyBs": {
                             displayName: "Company.BS",
                             type: "string"
                         }
@@ -229,16 +229,16 @@ ondescribe = function(configuration) {
                             "name",
                             "username",
                             "email",
-                            "address.street",
-                            "address.suite",
-                            "address.city",
-                            "address.geo.lat",
-                            "address.geo.lng",
+                            "addressStreet",
+                            "addressSuite",
+                            "addressCity",
+                            "addressGeoLat",
+                            "addressGeoLng",
                             "phone",
                             "website",
-                            "company.name",
-                            "company.catchPhrase",
-                            "company.bs"]
+                            "companyName",
+                            "companyCatchPhrase",
+                            "companyBs"]
                         },
                         "getById": {
                             displayName: "Get Users By ID",
@@ -249,16 +249,16 @@ ondescribe = function(configuration) {
                             "name",
                             "username",
                             "email",
-                            "address.street",
-                            "address.suite",
-                            "address.city",
-                            "address.geo.lat",
-                            "address.geo.lng",
+                            "addressStreet",
+                            "addressuite",
+                            "addressCity",
+                            "addressGeoLat",
+                            "addressGeoLng",
                             "phone",
                             "website",
-                            "company.name",
-                            "company.catchPhrase",
-                            "company.bs"]                        }
+                            "companyName",
+                            "companyCatchPhrase",
+                            "companyBs"]                        }
                     }
             }
         }
@@ -575,16 +575,16 @@ function onexecuteUsersGetList(parameters: SingleRecord, properties: SingleRecor
                 "name": x.name,
                 "username": x.username,
                 "email": x.email,
-                "address.street": x.address.street,
-                "address.suite": x.address.suite,
-                "address.city": x.address.city,
-                "address.geo.lat": x.address.geo.lat,
-                "address.geo.lng": x.address.geo.lng,
+                "addressStreet": x.address.street,
+                "addressSuite": x.address.suite,
+                "addressCity": x.address.city,
+                "addressGeoLat": x.address.geo.lat,
+                "addressGeoLng": x.address.geo.lng,
                 "phone": x.phone,
                 "website": x.website,
-                "company.name": x.company.name,
-                "company.catchPhrase": x.company.catchPhrase,
-                "company.bs": x.company.bs
+                "companyName": x.company.name,
+                "companyCatchPhrase": x.company.catchPhrase,
+                "companyBs": x.company.bs
             }}));
         },
     
@@ -606,16 +606,16 @@ function onexecuteUsersGetById(parameters: SingleRecord, properties: SingleRecor
                 "name": obj.name,
                 "username": obj.username,
                 "email": obj.email,
-                "address.street": obj.address.street,
-                "address.suite": obj.address.suite,
-                "address.city": obj.address.city,
-                "address.geo.lat": obj.address.geo.lat,
-                "address.geo.lng": obj.address.geo.lng,
+                "addressStreet": obj.address.street,
+                "addressSuite": obj.address.suite,
+                "addressCity": obj.address.city,
+                "addressGeoLat": obj.address.geo.lat,
+                "addressGeoLng": obj.address.geo.lng,
                 "phone": obj.phone,
                 "website": obj.website,
-                "company.name": obj.company.name,
-                "company.catchPhrase": obj.company.catchPhrase,
-                "company.bs": obj.company.bs
+                "companyName": obj.company.name,
+                "companyCatchPhrase": obj.company.catchPhrase,
+                "companyBs": obj.company.bs
             });
         },
 
