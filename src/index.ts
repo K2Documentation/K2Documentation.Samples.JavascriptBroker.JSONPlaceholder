@@ -355,7 +355,6 @@ function onexecutePostsGetById(parameters: SingleRecord, properties: SingleRecor
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
 
-                //console.log(xhr.responseText);
                 var obj = JSON.parse(xhr.responseText);
                 postResult({
                     "id": obj.id,
@@ -383,7 +382,6 @@ function onexecutePostsGetByUserId(parameters: SingleRecord, properties: SingleR
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
 
-                //console.log(xhr.responseText);
                 var obj = JSON.parse(xhr.responseText);
                 postResult(obj.map(x => {
                     return {
@@ -421,7 +419,6 @@ function onexecutePostsCreate(parameters: SingleRecord, properties: SingleRecord
                 // look for 'created' code
                 if (xhr.status !== 201) throw new Error("Failed with status " + xhr.status);
 
-                //console.log(xhr.responseText);
                 var obj = JSON.parse(xhr.responseText);
                 postResult({
                     "id": obj.id,
@@ -455,7 +452,6 @@ function onexecutePostsUpdate(parameters: SingleRecord, properties: SingleRecord
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
 
-                //console.log(xhr.responseText);
                 var obj = JSON.parse(xhr.responseText);
                 postResult({
                     "id": obj.id,
@@ -482,7 +478,6 @@ function onexecutePostsDelete(parameters: SingleRecord, properties: SingleRecord
             try {
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
-                //console.log(xhr.responseText);
                 resolve();
             } catch (e) {
                 reject(e);
@@ -501,7 +496,6 @@ function onexecuteCommentsGetList(parameters: SingleRecord, properties: SingleRe
 
         xhr.onreadystatechange = function () {
             try {
-                //console.log(xhr.responseText);
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
                 var obj = JSON.parse(xhr.responseText);
@@ -534,7 +528,6 @@ function onexecuteCommentsGetById(parameters: SingleRecord, properties: SingleRe
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
 
-                //console.log("responseText: " + xhr.responseText);
                 var obj = JSON.parse(xhr.responseText);
                 postResult({
                     "id": obj.id,
@@ -562,7 +555,6 @@ function onexecuteCommentsGetByPostId(parameters: SingleRecord, properties: Sing
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
 
-                //console.log(xhr.responseText);
                 var obj = JSON.parse(xhr.responseText);
                 postResult(obj.map(x => {
                     return {
@@ -593,7 +585,6 @@ function onexecuteToDosGetList(parameters: SingleRecord, properties: SingleRecor
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
 
-                //console.log(xhr.responseText);
                 var obj = JSON.parse(xhr.responseText);
                 postResult(obj.map(x => {
                     return {
@@ -623,7 +614,6 @@ function onexecuteToDosGetById(parameters: SingleRecord, properties: SingleRecor
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
 
-                //console.log(xhr.responseText);
                 var obj = JSON.parse(xhr.responseText);
                 postResult({
                     "id": obj.id,
@@ -651,7 +641,6 @@ function onexecuteUsersGetList(parameters: SingleRecord, properties: SingleRecor
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
 
-                //console.log(xhr.responseText);
                 var obj = JSON.parse(xhr.responseText);
                 postResult(obj.map(x => {
                     return {
@@ -691,7 +680,6 @@ function onexecuteUsersGetById(parameters: SingleRecord, properties: SingleRecor
                 if (xhr.readyState !== 4) return;
                 if (xhr.status !== 200) throw new Error("Failed with status " + xhr.status);
 
-                //console.log(xhr.responseText);
                 var obj = JSON.parse(xhr.responseText);
                 postResult({
                     "id": obj.id,
