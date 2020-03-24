@@ -270,47 +270,47 @@ ondescribe = async function (configuration): Promise<void> {
 
 onexecute = async function (objectName, methodName, parameters, properties, configuration): Promise<void> {
     switch (objectName) {
-        case "posts": onexecutePosts(methodName, parameters, properties, configuration); break;
-        case "comments": onexecuteComments(methodName, parameters, properties, configuration); break;
-        case "todos": onexecuteToDos(methodName, parameters, properties, configuration); break;
-        case "users": onexecuteUsers(methodName, parameters, properties, configuration); break;
+        case "posts": await onexecutePosts(methodName, parameters, properties, configuration); break;
+        case "comments": await onexecuteComments(methodName, parameters, properties, configuration); break;
+        case "todos": await onexecuteToDos(methodName, parameters, properties, configuration); break;
+        case "users": await onexecuteUsers(methodName, parameters, properties, configuration); break;
         default: throw new Error("The object " + objectName + " is not supported.");
     }
 }
 
 async function onexecutePosts(methodName: string, parameters: SingleRecord, properties: SingleRecord, configuration: SingleRecord): Promise<void> {
     switch (methodName) {
-        case "getList": onexecutePostsGetList(parameters, properties, configuration); break;
-        case "getById": onexecutePostsGetById(parameters, properties, configuration); break;
-        case "getByUserId": onexecutePostsGetByUserId(parameters, properties, configuration); break;
-        case "create": onexecutePostsCreate(parameters, properties, configuration); break;
-        case "update": onexecutePostsUpdate(parameters, properties, configuration); break;
-        case "delete": onexecutePostsDelete(parameters, properties, configuration); break;
+        case "getList": await onexecutePostsGetList(parameters, properties, configuration); break;
+        case "getById": await onexecutePostsGetById(parameters, properties, configuration); break;
+        case "getByUserId": await onexecutePostsGetByUserId(parameters, properties, configuration); break;
+        case "create": await onexecutePostsCreate(parameters, properties, configuration); break;
+        case "update": await onexecutePostsUpdate(parameters, properties, configuration); break;
+        case "delete": await onexecutePostsDelete(parameters, properties, configuration); break;
         default: throw new Error("The method " + methodName + " is not supported.");
     }
 }
 
 async function onexecuteComments(methodName: string, parameters: SingleRecord, properties: SingleRecord, configuration: SingleRecord): Promise<void> {
     switch (methodName) {
-        case "getList": onexecuteCommentsGetList(parameters, properties, configuration); break;
-        case "getById": onexecuteCommentsGetById(parameters, properties, configuration); break;
-        case "getByPostId": onexecuteCommentsGetByPostId(parameters, properties, configuration); break;
+        case "getList": await onexecuteCommentsGetList(parameters, properties, configuration); break;
+        case "getById": await onexecuteCommentsGetById(parameters, properties, configuration); break;
+        case "getByPostId": await onexecuteCommentsGetByPostId(parameters, properties, configuration); break;
         default: throw new Error("The method " + methodName + " is not supported.");
     }
 }
 
 async function onexecuteToDos(methodName: string, parameters: SingleRecord, properties: SingleRecord, configuration: SingleRecord): Promise<void> {
     switch (methodName) {
-        case "getList": onexecuteToDosGetList(parameters, properties, configuration); break;
-        case "getById": onexecuteToDosGetById(parameters, properties, configuration); break;
+        case "getList": await onexecuteToDosGetList(parameters, properties, configuration); break;
+        case "getById": await onexecuteToDosGetById(parameters, properties, configuration); break;
         default: throw new Error("The method " + methodName + " is not supported.");
     }
 }
 
 async function onexecuteUsers(methodName: string, parameters: SingleRecord, properties: SingleRecord, configuration: SingleRecord): Promise<void> {
     switch (methodName) {
-        case "getList": onexecuteUsersGetList(parameters, properties, configuration); break;
-        case "getById": onexecuteUsersGetById(parameters, properties, configuration); break;
+        case "getList": await onexecuteUsersGetList(parameters, properties, configuration); break;
+        case "getById": await onexecuteUsersGetById(parameters, properties, configuration); break;
         default: throw new Error("The method " + methodName + " is not supported.");
     }
 }
