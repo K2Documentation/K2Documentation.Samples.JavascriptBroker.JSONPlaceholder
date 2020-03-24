@@ -251,7 +251,7 @@ ondescribe = async function (configuration): Promise<void> {
                             "username",
                             "email",
                             "addressStreet",
-                            "addressuite",
+                            "addressSuite",
                             "addressCity",
                             "addressGeoLat",
                             "addressGeoLng",
