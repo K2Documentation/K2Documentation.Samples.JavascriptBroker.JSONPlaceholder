@@ -1,7 +1,7 @@
 //This placeholder test.ts file is a subset from the K2 Broker Template project 
 //(https://github.com/K2Documentation/K2Documentation.Samples.JavascriptBroker.Template/blob/master/src/test.ts)
 //and is provided here just for reference. It must be modified with the proper objects and methods.
-import test from 'ava';
+import {test} from 'vitest';
 import '@k2oss/k2-broker-core/test-framework';
 import './index';
 
@@ -16,9 +16,13 @@ test('describe returns the hardcoded instance', async t => {
         schema = result;
     });
 
-    await Promise.resolve<void>(ondescribe());
+    await Promise.resolve<void>(
+        ondescribe({
+            configuration: {},
+        })
+    );
     
-    t.deepEqual(schema, {
+    t.expect(schema).toStrictEqual({
         objects: {
             "todo": {
                 displayName: "TODO",
@@ -61,32 +65,26 @@ test('describe returns the hardcoded instance', async t => {
             }
         }
     });
-
-    t.pass();
 });
 
 test('execute fails with the wrong parameters', async t => {
-    let error = await t.throwsAsync(Promise.resolve<void>(onexecute({
+    await t.expect(onexecute({
         objectName: 'test1',
         methodName: 'unused',
         parameters: {},
         properties: {},
+        configuration: {},
         schema: {}
-    })));
-    
-    t.deepEqual(error.message, 'The object test1 is not supported.');
+    })).rejects.toThrow('The object test1 is not supported.');
 
-    error = await t.throwsAsync(Promise.resolve<void>(onexecute({
+    await t.expect(onexecute({
         objectName: 'todo',
         methodName: 'test2',
         parameters: {},
         properties: {},
+        configuration: {},
         schema: {}
-    })));
-    
-    t.deepEqual(error.message, 'The method test2 is not supported.');
-
-    t.pass();
+    })).rejects.toThrow('The method test2 is not supported.');
 });
 
 test('execute passes with method params', async t => {
@@ -108,15 +106,12 @@ test('execute passes with method params', async t => {
         schema: {}
     }));
 
-    t.deepEqual(result, {
+    t.expect(result).toStrictEqual({
         id: 456
     });
-
-    t.pass();
 });
 
 test('execute passes', async t => {
-
     let xhr: {[key:string]: any} = null;
     class XHR {
         public onreadystatechange: () => void;
@@ -175,7 +170,7 @@ test('execute passes', async t => {
         schema: {}
     }));
 
-    t.deepEqual(xhr, {
+    t.expect(xhr).toStrictEqual({
         opened: {
             method: 'GET',
             url: 'https://jsonplaceholder.typicode.com/todos/123'
@@ -185,12 +180,10 @@ test('execute passes', async t => {
         }
     });
 
-    t.deepEqual(result, {
+    t.expect(result).toStrictEqual({
         id: 123,
         userId: 51,
         title: "Groceries",
         completed: false
     });
-
-    t.pass();
 });
